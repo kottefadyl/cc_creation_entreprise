@@ -1,5 +1,7 @@
 import React from 'react'
 import image1 from "./images.jpg";
+import './navbar2.css'
+
 export default function Navbar2() {
   return (
     <div className='bg-red-700 py-12'>
@@ -12,7 +14,7 @@ export default function Navbar2() {
           </p>
         </div>
         <div>
-          <div className='flex rounded-md border-black  p-4 shadow-2xl'>
+          <div className='flex rounded-md border-black navbar2Card  p-4 shadow-2xl'>
             <div><img src={image1} className='h-28 w-56' alt="" /></div>
             <div className='ml-4 text-zinc-200 '>
               <p className=''>toptal matches you whith top developers who are guaranteed to succeed.</p>
