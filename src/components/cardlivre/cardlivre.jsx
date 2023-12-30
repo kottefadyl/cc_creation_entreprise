@@ -1,11 +1,12 @@
 import React from 'react'
+import './imageCard.css'
 
 const Cardlivre = (props) => {
     return (
-        <div className="m-3 block  bg-zinc-300 text-black ">
-            <div className="relative overflow-hidden w-full h-30">
+        <div className="m-3 block  bg-zinc-300 text-black rounded">
+            <div className=" max-h-full max-w-full overflow-hidden  container">
                 <img
-                    className="rounded-t-lg h-20 w-full  object-cover "
+                    className="h-full w-full imagecard "
                     src={props.route}
                     alt="" />
             </div>
@@ -14,8 +15,7 @@ const Cardlivre = (props) => {
                 <p class=" mx-3 text-black py-4 text-sm">
                     {props.description}
                 </p>
-                <button
-                    className="bg-white text-black px-5 py-1  rounded-sm font-bold shadow-zinc-800 shadow-sm text-sm">
+                <button className="bg-white text-black px-5 py-1  rounded-sm font-bold shadow-zinc-800 shadow-sm text-sm border-b-2">
                     preview & download
                 </button>
             </div>
