@@ -1,0 +1,26 @@
+.navbar2Card{
+    position: relative;
+    width: 300px;
+    height: 200px;
+
+ 
+}
+
+.navbar2Card::before, .navbar2Card::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(0, 0, 0, 0.3); */
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius:9px ;
+}
+
+.imageBack{
+    background-image: linear-gradient(rgba(57, 5, 245, 0.521),rgba(161, 44, 44, 0.26)), url('./gros-plan-.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

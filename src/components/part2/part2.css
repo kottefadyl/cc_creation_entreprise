@@ -1,0 +1,11 @@
+.custum-class-part2{
+    @apply sm:block
+}
+
+.classCus{
+    
+}
+
+.taille{
+    width: 35rem;
+}
