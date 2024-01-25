@@ -5,6 +5,7 @@ import urlapi from '../../urlApi'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import img1 from './chriot-vide.jpg' 
+import { toast } from 'react-toastify'
 
 function BooksCheckout() {
     const navigate = useNavigate();
@@ -79,7 +80,7 @@ function BooksCheckout() {
         }
         navigate('/dash');
         localStorage.removeItem('commande');
-
+        toast('the order has been received successfully');
     };
 
 
