@@ -3,22 +3,21 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './part1.css'
 import { BsBook } from "react-icons/bs";
+import urlapi from '../../urlApi';
 export default function Part1() {
 
     const [catalogue, setCatalogue] = useState([]);
-
-
     useEffect(() => {
         // Effectuer une requête GET pour récupérer les todos depuis votre API
-        axios.get('http://192.168.115.38:8000/api/Catalogue/')  // Remplacez l'URL par l'URL de votre API
+        axios.get(urlapi +'/Catalogue')  // Remplacez l'URL par l'URL de votre API
           .then(response => {
             setCatalogue(response.data);  // Mettre à jour l'état avec les todos récupérés depuis l'API
             console.log(response.data);
+            console.log(catalogue);
           })
           .catch(error => {
             console.error('Erreur lors de la récupération des catalogues :', error);
         });
-      
     }, [])
 
     return (
@@ -32,7 +31,7 @@ export default function Part1() {
             <div className=" sm:block grid grid-cols-3-cols gap-4 mt-2">
                 {
                     catalogue.map(cata => (
-                        <Cardlivre route={cata.image} titre={cata.intitule} />
+                        <Cardlivre route={cata.image} titre={cata.intitule} id={cata.id}/>
                     ))
                 }  
             </div>
