@@ -30,7 +30,9 @@ function AbonnerLogin() {
     } catch (error) {
       console.error('Erreur lors de la connexion', error);
     }
+    
   };
+  
   return (
     <>
       <main className="w-full h-screen flex flex-col items-center justify-center px-4">

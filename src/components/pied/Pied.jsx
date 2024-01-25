@@ -1,8 +1,24 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { BsEnvelope, BsPhone, BsTelephone, BsZoomIn, BsFacebook, BsInstagram, BsTwitter, BsWhatsapp } from "react-icons/bs";
 import './pied.css'
+import emailjs from '@emailjs/browser';
 
 function Pied() {
+    
+    const form = useRef()
+    const sendEmail =  (e) => { // Ajouter l'argument e
+        
+        e.preventDefault(); // Ajouter cette ligne
+        alert("yo")
+         emailjs.sendForm('service_qs3qgk3', 'template_1ua6ctp', form.current, 'iC_74LLXFkH3MuPxO')
+           .then((result) => {
+               alert(result.text);
+           }, (error) => {
+               alert(error.text);
+          });
+        console.log('nien');
+        }
+
     return (
 
         <div className=' relative'>
@@ -42,7 +58,7 @@ function Pied() {
 
             <div className='sm:block flex sm:p-5 p-14 pt-36 divDroite relative z-1 '>
                 <div className='w-1/2 sm:w-full'>
-                    <form>
+                    <form ref={form} onSubmit={sendEmail}>
                         <div className="space-y-12">
                             <div className="border-b border-gray-900/10 pb-12 ">
 
@@ -57,7 +73,7 @@ function Pied() {
 
                                                 <input
                                                     type="text"
-                                                    name="username"
+                                                    name="to_name"
                                                     id="username"
                                                     autoComplete="username"
                                                     className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-neutral-300 focus:ring-0 sm:text-sm sm:leading-6"
@@ -75,7 +91,7 @@ function Pied() {
 
                                             <input
                                                 type="text"
-                                                name="username"
+                                                name="from_name"
                                                 id="username"
                                                 autoComplete="username"
                                                 className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-neutral-300 focus:ring-0 sm:text-sm sm:leading-6"
@@ -92,7 +108,7 @@ function Pied() {
 
                                             <input
                                                 type="text"
-                                                name="username"
+                                                name="message"
                                                 id="username"
                                                 autoComplete="username"
                                                 className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-neutral-200 placeholder:text-neutral-300 focus:ring-0 sm:text-sm sm:leading-6"
@@ -108,8 +124,8 @@ function Pied() {
 
                         </div>
                         <div className="mt-6 flex  justify-center gap-x-6 text-center items-center">
-                            <button
-                                type="submit"
+                            <button 
+                            type='button'
                                 className="rounded-2xl bg-neutral-100  py-2 text-sm font-semibold text-rose-400 shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 px-20"
                             >
                                 Soumettre
