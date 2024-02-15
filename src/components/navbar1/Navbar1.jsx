@@ -22,7 +22,7 @@ function Navbar1() {
           <li className="mx-5 sm:hidden flex">
             Theme<BsCaretDownFill className="text-sm my-auto" />
           </li>
-          <Link to={'https://necsarl.pythonanywhere.com/db.xlsx'} className="mx-5 sm:hidden no-underline flex cursor-pointer transition duration-700 hover:scale-110 active:scale-90">
+          <Link to={'https://necsarl.pythonanywhere.com/media/images/db.xlsx'} className="mx-5 sm:hidden no-underline flex cursor-pointer transition duration-700 hover:scale-110 active:scale-90">
             download <BsCaretDownFill className="text-sm my-auto  " />
           </Link>
           <Link
