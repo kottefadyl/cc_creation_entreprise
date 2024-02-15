@@ -31,9 +31,9 @@ function Navbar1() {
           >
             Invoices<BsCaretDownFill className="text-sm my-auto" />
           </Link>
-          <li className="mx-5 sm:hidden flex">
-            Contact<BsCaretDownFill className="text-sm my-auto" />
-          </li>
+          <Link to={'https://necsarl.pythonanywhere.com/api/refresh2'} className="mx-5 sm:hidden flex">
+            Actualisé<BsCaretDownFill className="text-sm my-auto" />
+          </Link>
         </ul>
         <ul>
           <li className="flex">
